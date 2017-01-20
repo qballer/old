@@ -2,11 +2,10 @@ var path = require('path');
 var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-var combineLoaders = require('webpack-combine-loaders')
 
 module.exports = {
   context: process.cwd(),
-  devtool: "eval",
+  // devtool: "eval",
   entry: {
     site: ['./src']
   },
@@ -23,7 +22,7 @@ module.exports = {
     port: 8080
   },
   resolve: {
-    extensions: ['', '.jsx', '.js', '.css']
+    extensions: ['', '.jsx', '.js']
   },
   plugins: [
     new CopyWebpackPlugin([]),
@@ -35,21 +34,7 @@ module.exports = {
     loaders: [{
         test: /\.jsx?$/,
         loader: 'babel-loader'
-      },
-
-      {
-        test: /\.css$/,
-        loader: combineLoaders([{
-          loader: 'style-loader'
-        }, {
-          loader: 'css-loader',
-          query: {
-            modules: true,
-            localIdentName: '[name]__[local]___[hash:base64:5]'
-          }
-        }])
-      }
-    ],
+      }],
     noParse: [/\.min\.js$/]
   }
 }
