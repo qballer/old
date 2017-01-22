@@ -25,7 +25,7 @@ module.exports = {
     extensions: ['', '.jsx', '.js']
   },
   plugins: [
-    new CopyWebpackPlugin([]),
+    new CopyWebpackPlugin([{from:'./public', to:'./public'}]),
     new HtmlWebpackPlugin({
       template: './index.html'
     })

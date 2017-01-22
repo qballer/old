@@ -7,6 +7,14 @@ export class Card extends React.Component {
     constructor(props) {
         super(props)
         this.state = {hover: false}
+        this.backID  = Card.getID();
+        this.frontID  = Card.getID();
+        
+    }
+    static id = 0
+   
+    static getID(){
+        ++Card.id;
     }
     
     mouseOver () {
@@ -31,11 +39,11 @@ export class Card extends React.Component {
             }
         }, props)
         return <div 
-                onMouseOver={this.mouseOut.bind(this)} 
+                onMouseOver={this.mouseOver.bind(this)} 
                 onMouseOut={this.mouseOut.bind(this)} 
                 style={styles.card}>
-            {!this.state.hover ?  <Front cover={this.props.front}/> : 
-                                  <Back cover={this.props.back} links={this.props.links}/>}
+            {!this.state.hover ?  <Front key={this.frontID} cover={this.props.front}/> : 
+                                  <Back key={this.backID} cover={this.props.back} links={this.props.links}/>}
         </div>
     }
 }
@@ -52,9 +60,11 @@ function Back(props) {
             <ImgLink link={props.cover}/>
             <div>
                 {
-                    _.keys(props.links).map((key) => {
+                    _.keys(props.links).map((key, index) => {
                         const LinkIcon = icons[key] || icons.default
-                        return <LinkIcon link={props.links[key]}/>
+                        return <LinkIcon key={props.key + 'icon' + index} 
+                                         style={{padding:'8px'}} 
+                                         link={props.links[key]}/>
                     })
                 }
             </div>
