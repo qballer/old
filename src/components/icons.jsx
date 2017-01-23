@@ -8,7 +8,7 @@ export default function(props) {
                     color: 'white',
                     fill: 'currentColor',
                     display: 'inline-block'
-                }, props.style),
+                }, props.style.icon),
                 svg: {
                     fill:'red',
                     width: '10px',
