@@ -39,11 +39,13 @@ export class Card extends React.Component {
             }
         }, props)
         return <div 
-                onMouseOver={this.mouseOver.bind(this)} 
-                onMouseOut={this.mouseOut.bind(this)} 
+                onMouseEnter={this.mouseOver.bind(this)} 
+                onMouseLeave={this.mouseOut.bind(this)} 
                 style={styles.card}>
-            {!this.state.hover ?  <Front key={this.frontID} cover={this.props.front}/> : 
-                                  <Back key={this.backID} cover={this.props.back} links={this.props.links}/>}
+            {!this.state.hover ?  <Front key={'front' + this.frontID} cover={this.props.front}/> : 
+                                  <Back key={'back' + this.backID} 
+                                        cover={this.props.back} 
+                                        links={this.props.links}/>}
         </div>
     }
 }

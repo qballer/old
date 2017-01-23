@@ -6,13 +6,13 @@ export default function(props) {
             'default': {
                 icon: Object.assign({
                     color: 'white',
-                    width: '20px',
-                    height:'20px',
                     fill: 'currentColor',
                     display: 'inline-block'
                 }, props.style),
                 svg: {
-                    fill:'red'
+                    fill:'red',
+                    width: '10px',
+                    height:'10px'
                 }
             }
         }, props)
