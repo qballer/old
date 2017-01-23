@@ -11,8 +11,8 @@ export default function(props) {
                 }, props.style.icon),
                 svg: {
                     fill:'red',
-                    width: '10px',
-                    height:'10px'
+                    width: '15px',
+                    height:'15px'
                 }
             }
         }, props)
@@ -25,7 +25,21 @@ export default function(props) {
 }
 
 export function hub(props) {
-    return <a href={props.link}>hub</a>
+    const styles = reactCSS({
+        'default':{
+            hub: {
+                width: '0px',
+                display: 'inline-block'
+            },
+            img: {
+                backgroundSize: 'contain',
+                width: '60px',
+                height: '60px'
+            }
+        }
+    })
+
+    return <div style={styles.hub}><a href={props.link}><img style={styles.img} src="./public/assets/octocat.png"/></a></div>
 }
 
 export function med(props) {

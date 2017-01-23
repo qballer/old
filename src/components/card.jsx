@@ -17,11 +17,11 @@ export class Card extends React.Component {
         ++Card.id;
     }
     
-    mouseOver () {
+    mouseOver = () =>{
         this.setState({hover: true});
     }
 
-    mouseOut () {
+    mouseOut = () => {
         this.setState({hover: false})
     }
 
@@ -29,18 +29,18 @@ export class Card extends React.Component {
         const props = this.props
         const styles = reactCSS({
             'default': {
-                card: Object.assign({
+                card: {
                     border: '1px solid white',
                     color: 'white',
                     width: '160px',
                     height:'170px',
-                    display: 'inline-block'
-                }, props.style)
+                    display: 'inline-block', 
+                    ...props.style}
             }
         }, props)
         return <div 
-                onMouseEnter={this.mouseOver.bind(this)} 
-                onMouseLeave={this.mouseOut.bind(this)} 
+                onMouseEnter={this.mouseOver} 
+                onMouseLeave={this.mouseOut} 
                 style={styles.card}>
             {!this.state.hover ?  <Front key={'front' + this.frontID} cover={this.props.front}/> : 
                                   <Back key={'back' + this.backID} 
