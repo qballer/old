@@ -1,5 +1,5 @@
-var path = require('path');
-var webpack = require('webpack');
+var path = require('path')
+var webpack = require('webpack')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -52,7 +52,7 @@ module.exports = {
         screw_ie8: true
       }
     }),
-    new webpack.optimize.CommonsChunkPlugin({name:'vendor', filename:'vendor.bundle.js'})
+    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'vendor.bundle.js'})
   ],
   module: {
     loaders: [{
