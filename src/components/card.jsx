@@ -13,15 +13,7 @@ export class Card extends React.Component {
   }
 
   static getID () {
-    ++id
-  }
-
-  mouseOver () {
-    this.setState({hover: true})
-  }
-
-  mouseOut () {
-    this.setState({hover: false})
+    return ++id
   }
 
   render () {
@@ -38,38 +30,39 @@ export class Card extends React.Component {
       }
     }, props)
     return <div
-      onMouseEnter={this.mouseOver}
-      onMouseLeave={this.mouseOut}
+      onMouseEnter={()=> this.setState({hover: true})}
+      onMouseLeave={()=> this.setState({hover: false})}
       style={styles.card}>
-      {!this.state.hover ? <Front key={'front' + this.frontID} cover={this.props.front} /> :
-      <Back key={'back' + this.backID}
-        cover={this.props.back}
-        links={this.props.links} />}
+      {
+        !this.state.hover ? 
+          <Front key={'front' + this.frontID} cover={this.props.front} /> 
+          :<Back key={'back' + this.backID} cover={this.props.back} links={this.props.links} />
+      }
     </div>
   }
 }
 
-Card.id = 0
-
-function ImgLink ({link = null}) {
-  return link && <div><img style={{width: '100%'}} src={link} /></div>
-}
 function Front (props) {
-  return <ImgLink link={props.cover} />
+  return props.cover && <div><img style={{width: '100%', height:'100%'}} src={props.cover} /></div>
 }
 
 function Back (props) {
   return <div>
-    <ImgLink link={props.cover} />
-    <div>
-      {
-                    _.keys(props.links).map((key, index) => {
-                      const LinkIcon = icons[key] || icons.default
-                      return <LinkIcon key={props.key + 'icon' + index}
-                        style={{padding: '8px'}}
-                        link={props.links[key]} />
-                    })
-                }
-    </div>
+      {props.cover && <div><img style={{width: '100%', height:'70%'}} src={props.cover} /></div>}
+      <div style={{ width:'100%', height:'30%', display:'inline-flex'}}>
+        {
+          _.keys(props.links)
+          .map((key, index, arr) => {
+            const LinkIcon = icons[key] || icons.med
+            
+            return <div style={{minWidth:`${Math.floor(100/arr.length)}%`,
+                                 maxWidth:`${Math.floor(100/arr.length)}%`}}>
+              <LinkIcon 
+                key={props.key + 'icon' + index} 
+                link={props.links[key]} />
+            </div>
+          })
+        }
+      </div>
   </div>
 }

@@ -3,7 +3,10 @@ import reactCSS from 'reactcss'
 import {Card} from './card'
 
 let cards = [{
-  links: {hub: 'https://github.com/qballer', twitter: 'https://twitter.com/qbllr_'},
+  links: {
+    hub: 'https://github.com/qballer',
+    twitter: 'https://twitter.com/qbllr_'
+  },
   back: '../public/assets/backDT.jpg',
   front: '../public/assets/frontDT.jpg'
 }]
@@ -17,11 +20,21 @@ export function Gallery (props) {
       }
     }
   }, props)
-
+  
   let children = cards.map(({links, back, front}, index) =>
     <Card key={'card' + index} links={links} back={back} front={front} />)
 
   return <div id='gallery' style={styles.gallery}>
     {children}
   </div>
+}
+
+function AboutMe(props) { 
+  let links = {
+    hub:'https://www.github.com/qballer',
+    twitter: 'https://www.twitter.com/qbllr_'
+  }
+  let back  = ''
+  let front = ''
+  return <Card id='AboutMe' links={links}  />
 }
