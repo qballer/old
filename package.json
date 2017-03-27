@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "clean": "rm -rf build",
-    "build": "webpack",
+    "build": "babel ./src -d ./dist/src && node build",
     "start": "webpack-dev-server --progress --hot --inline"
   },
   "repository": {
@@ -40,5 +40,8 @@
     "webpack": "2.3.1",
     "webpack-dev-server": "2.4.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "babel-cli": "^6.24.0",
+    "react-dom-server": "^0.0.5"
+  }
 }
