@@ -7,8 +7,8 @@ let cards = [{
     hub: 'https://github.com/qballer',
     twitter: 'https://twitter.com/qbllr_'
   },
-  back: '../public/assets/backDT.jpg',
-  front: '../public/assets/frontDT.jpg'
+  back: 'https://avatars0.githubusercontent.com/u/1002622?v=3&s=460',
+  front: '../public/assets/enigma.jpg'
 }]
 
 export function Gallery (props) {

@@ -35,4 +35,4 @@ function renderCompToFile(compToRender, out) {
     fs.writeFile(out, template)
 }
 
-renderPageToFile(Gallery, 'index.html')
+renderCompToFile(Gallery, 'index.html')

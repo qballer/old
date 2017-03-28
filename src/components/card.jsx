@@ -23,8 +23,8 @@ export class Card extends React.Component {
         card: {
           border: '1px solid white',
           color: 'white',
-          width: '160px',
-          height: '170px',
+          width: '229px',
+          height: '230px',
           display: 'inline-block',
           ...props.style}
       }
@@ -48,8 +48,8 @@ function Front (props) {
 
 function Back (props) {
   return <div>
-      {props.cover && <div><img style={{width: '100%', height:'70%'}} src={props.cover} /></div>}
-      <div style={{ width:'100%', height:'30%', display:'inline-flex'}}>
+      {props.cover && <div><img style={{width: '100%', height:'86%'}} src={props.cover} /></div>}
+      <div style={{ width:'100%', height:'14%', display:'inline-flex'}}>
         {
           _.keys(props.links)
           .map((key, index, arr) => {
