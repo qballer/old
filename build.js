@@ -25,7 +25,8 @@ function renderCompToFile(compToRender, out) {
             fs.readdirSync('./public')
             .filter(function(file){return !!~file.indexOf('bundle.js')})
             .map(function(file) { 
-                return `<script type="text/javascript" src="/dist/public/${file}"></script>`
+	    	console.log('got file: ', file)
+                return `<script type="text/javascript" src="/public/${file}"></script>`
             }) 
             .join('')
         }
