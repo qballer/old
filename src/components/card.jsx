@@ -1,6 +1,4 @@
 import React from 'react'
-import reactCSS from 'reactcss'
-import _ from 'lodash'
 import * as icons from './icons'
 
 let id = 0
@@ -18,8 +16,7 @@ export class Card extends React.Component {
 
   render () {
     const props = this.props
-    const styles = reactCSS({
-      'default': {
+    const styles = {
         card: {
           border: '1px solid white',
           color: 'white',
@@ -27,8 +24,7 @@ export class Card extends React.Component {
           height: '230px',
           display: 'inline-block',
           ...props.style}
-      }
-    }, props)
+    } 
     return <div
       onMouseEnter={()=> this.setState({hover: true})}
       onMouseLeave={()=> this.setState({hover: false})}
@@ -51,7 +47,7 @@ function Back (props) {
       {props.cover && <div><img style={{width: '100%', height:'86%'}} src={props.cover} /></div>}
       <div style={{ width:'100%', height:'14%', display:'inline-flex'}}>
         {
-          _.keys(props.links)
+          Object.keys(props.links)
           .map((key, index, arr) => {
             const LinkIcon = icons[key] || icons.med
             

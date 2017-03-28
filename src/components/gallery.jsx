@@ -1,5 +1,4 @@
 import React from 'react'
-import reactCSS from 'reactcss'
 import {Card} from './card'
 
 let cards = [{
@@ -12,15 +11,12 @@ let cards = [{
 }]
 
 export function Gallery (props) {
-  const styles = reactCSS({
-    'default': {
+  const styles = {
       gallery: {
         width: '100%',
         height: '100%'
       }
-    }
-  }, props)
-  
+  }
   let children = cards.map(({links, back, front}, index) =>
     <Card key={'card' + index} links={links} back={back} front={front} />)
 

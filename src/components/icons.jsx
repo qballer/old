@@ -1,25 +1,22 @@
 import React from 'react'
-import reactCSS from 'reactcss'
 
 
-export function hub (props) {
-  const styles = reactCSS({
-    'default': {
+export function Hub (props) {
+  const styles = {
       img: {
         border: '1px solid white',
         backgroundSize: 'contain',
         width: '100%',
         height: '100%'
       }
-    }
-  })
+  }
 
   return <span >
       <a href={props.link}><img style={styles.img} src='/dist/public/assets/octocat.png' /></a>
     </span>
 }
 
-export function med (props) {
+export function Med (props) {
   return <div><a style={{
     float:'left',
     left:'50%',
