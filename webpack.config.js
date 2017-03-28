@@ -10,23 +10,18 @@ module.exports = {
     site: ['./src']
   },
   output: {
-    path: path.join(process.cwd(), 'dist'),
+    path: path.join(process.cwd(), 'public'),
     filename: '[name].bundle.js',
     pathinfo: true
-  },
-  devServer: {
-    contentBase: './',
-    hot: true,
-    port: 8080
   },
   resolve: {
     extensions: ['.jsx', '.js']
   },
   plugins: [
-    new CopyWebpackPlugin([{
-      from: './public',
-      to: './public'
-    }]),
+    //new CopyWebpackPlugin([{
+     // from: './public',
+     // to: './public'
+   // }]),
     // new HtmlWebpackPlugin({
     //   template: './index.html'
     // }), 

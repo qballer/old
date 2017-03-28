@@ -8,7 +8,7 @@ let cards = [{
     twitter: 'https://twitter.com/qbllr_'
   },
   back: 'https://avatars0.githubusercontent.com/u/1002622?v=3&s=460',
-  front: '../public/assets/enigma.jpg'
+  front: './public/assets/enigma.jpg'
 }]
 
 export function Gallery (props) {
