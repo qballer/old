@@ -24,7 +24,9 @@ export class Card extends React.Component {
           width: '229px',
           height: '230px',
           display: 'inline-block',
-          ...props.style}
+          ...props.style
+	  
+	}
     } 
     return <div
       onMouseEnter={()=> this.setState({hover: true})}
