@@ -4,9 +4,9 @@
   "description": "personal web site",
   "main": "src/index.js",
   "scripts": {
-    "clean": "rm -rf build",
+    "clean": "rm -rf dist && rm -rf ./public/*.bundle.js",
     "build": "webpack && cp ./dist/*.bundle.js ./public && babel ./src -d ./dist/src && node build",
-    "start": "webpack-dev-server --progress --hot --inline"
+    "start": "python -m SimpleHTTPServer 8000"
   },
   "repository": {
     "type": "git",
