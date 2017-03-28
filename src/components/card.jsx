@@ -1,4 +1,5 @@
 import React from 'react'
+import _ from 'lodash'
 import * as icons from './icons'
 
 let id = 0
@@ -47,9 +48,9 @@ function Back (props) {
       {props.cover && <div><img style={{width: '100%', height:'86%'}} src={props.cover} /></div>}
       <div style={{ width:'100%', height:'14%', display:'inline-flex'}}>
         {
-          Object.keys(props.links)
+          _.keys(props.links)
           .map((key, index, arr) => {
-            const LinkIcon = icons[key] || icons.med
+            const LinkIcon = icons[key] || icons.Med
             
             return <div style={{minWidth:`${Math.floor(100/arr.length)}%`,
                                  maxWidth:`${Math.floor(100/arr.length)}%`}}>

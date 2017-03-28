@@ -12,7 +12,7 @@ export function Hub (props) {
   }
 
   return <span >
-      <a href={props.link}><img style={styles.img} src='/dist/public/assets/octocat.png' /></a>
+      <a href={props.link}><img style={styles.img} src='/public/assets/octocat.png' /></a>
     </span>
 }
 

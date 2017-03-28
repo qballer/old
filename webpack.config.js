@@ -5,7 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   context: process.cwd(),
-  // devtool: "eval",
+   devtool: "eval",
   entry: {
     site: ['./src']
   },
@@ -35,19 +35,20 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
 
     // Minify the code.
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        screw_ie8: true, // React doesn't support IE8
-        warnings: false
-      },
-      mangle: {
-        screw_ie8: true
-      },
-      output: {
-        comments: false,
-        screw_ie8: true
-      }
-    })],
+//    new webpack.optimize.UglifyJsPlugin({
+//      compress: {
+//        screw_ie8: true, // React doesn't support IE8
+//        warnings: false
+//      },
+//      mangle: {
+//        screw_ie8: true
+//      },
+//      output: {
+//        comments: false,
+//        screw_ie8: true
+//      }
+//    })
+  ],
   module: {
     loaders: [{
       test: /\.jsx?$/,
