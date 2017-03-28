@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "clean": "rm -rf build",
-    "build": "babel ./src -d ./dist/src && node build",
+    "build": "webpack && cp ./dist/*.bundle.js ./public && babel ./src -d ./dist/src && node build",
     "start": "webpack-dev-server --progress --hot --inline"
   },
   "repository": {

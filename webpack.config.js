@@ -27,9 +27,10 @@ module.exports = {
       from: './public',
       to: './public'
     }]),
-    new HtmlWebpackPlugin({
-      template: './index.html'
-    }), new webpack.DefinePlugin({
+    // new HtmlWebpackPlugin({
+    //   template: './index.html'
+    // }), 
+    new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
       }
@@ -51,9 +52,7 @@ module.exports = {
         comments: false,
         screw_ie8: true
       }
-    }),
-    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'vendor.bundle.js'})
-  ],
+    })],
   module: {
     loaders: [{
       test: /\.jsx?$/,
