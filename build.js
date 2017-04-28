@@ -3,16 +3,15 @@ var React = require('react')
 var ReactDOMServer = require('react-dom/server')
 var Gallery = require('./dist/src/components/gallery.js').Gallery
 
+function renderCompToFile (compToRender, out) {
+  var renderedComp = ReactDOMServer.renderToStaticMarkup(React.createElement(compToRender))
 
-function renderCompToFile(compToRender, out) {
-    var renderedComp = ReactDOMServer.renderToStaticMarkup(React.createElement(compToRender))
-
-    var template = `
+  var template = `
     <html>
     <head>
     </head>
     <style>
-        body { 
+        body {
         background: black;
         color: white;
         }
@@ -23,17 +22,17 @@ function renderCompToFile(compToRender, out) {
         </div>
         ${
             fs.readdirSync('./public')
-            .filter(function(file){return !!~file.indexOf('bundle.js')})
-            .map(function(file) { 
-	    	console.log('got file: ', file)
-                return `<script type="text/javascript" src="/public/${file}"></script>`
-            }) 
+            .filter(function (file) { return !!~file.indexOf('bundle.js') })
+            .map(function (file) {
+        	    	console.log('got file: ', file)
+              return `<script type="text/javascript" src="/public/${file}"></script>`
+            })
             .join('')
         }
     </body>
     </html>`
 
-    fs.writeFile(out, template)
+  fs.writeFile(out, template)
 }
 
 renderCompToFile(Gallery, 'index.html')

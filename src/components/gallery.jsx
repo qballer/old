@@ -12,10 +12,10 @@ let cards = [{
 
 export function Gallery (props) {
   const styles = {
-      gallery: {
-        width: '100%',
-        height: '100%'
-      }
+    gallery: {
+      width: '100%',
+      height: '100%'
+    }
   }
   let children = cards.map(({links, back, front}, index) =>
     <Card key={'card' + index} links={links} back={back} front={front} />)
@@ -25,12 +25,12 @@ export function Gallery (props) {
   </div>
 }
 
-function AboutMe(props) { 
+function AboutMe (props) {
   let links = {
-    hub:'https://www.github.com/qballer',
+    hub: 'https://www.github.com/qballer',
     twitter: 'https://www.twitter.com/qbllr_'
   }
-  let back  = ''
+  let back = ''
   let front = ''
-  return <Card id='AboutMe' links={links}  />
+  return <Card id='AboutMe' links={links} />
 }

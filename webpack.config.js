@@ -1,11 +1,9 @@
-var path = require('path')
-var webpack = require('webpack')
-var CopyWebpackPlugin = require('copy-webpack-plugin')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   context: process.cwd(),
-   devtool: "eval",
+  devtool: 'eval',
   entry: {
     site: ['./src']
   },
@@ -18,36 +16,13 @@ module.exports = {
     extensions: ['.jsx', '.js']
   },
   plugins: [
-    //new CopyWebpackPlugin([{
-     // from: './public',
-     // to: './public'
-   // }]),
-    // new HtmlWebpackPlugin({
-    //   template: './index.html'
-    // }), 
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('')
       }
     }),
 
-    // This helps ensure the builds are consistent if source hasn't changed:
-    new webpack.optimize.OccurrenceOrderPlugin(),
-
-    // Minify the code.
-//    new webpack.optimize.UglifyJsPlugin({
-//      compress: {
-//        screw_ie8: true, // React doesn't support IE8
-//        warnings: false
-//      },
-//      mangle: {
-//        screw_ie8: true
-//      },
-//      output: {
-//        comments: false,
-//        screw_ie8: true
-//      }
-//    })
+    new webpack.optimize.OccurrenceOrderPlugin()
   ],
   module: {
     loaders: [{
