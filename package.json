@@ -24,6 +24,11 @@
       "stage-0"
     ]
   },
+  "standard":{
+    "ignore": [
+      "*.bundle.js"
+    ]
+  },
   "homepage": "https://github.com/qballer/qballer.github.io#readme",
   "devDependencies": {
     "babel-core": "^6.24.1",
