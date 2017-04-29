@@ -25,12 +25,12 @@ export function Gallery (props) {
   </div>
 }
 
-function AboutMe (props) {
-  let links = {
-    hub: 'https://www.github.com/qballer',
-    twitter: 'https://www.twitter.com/qbllr_'
-  }
-  let back = ''
-  let front = ''
-  return <Card id='AboutMe' links={links} />
-}
+// function AboutMe (props) {
+//  let links = {
+//    hub: 'https://www.github.com/qballer',
+//    twitter: 'https://www.twitter.com/qbllr_'
+//  }
+//  let back = ''
+//  let front = ''
+//  return <Card id='AboutMe' links={links} />
+// }

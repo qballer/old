@@ -48,7 +48,7 @@ function Front (props) {
 function Back (props) {
   return <div>
     {props.cover && <div><img style={{width: '100%', height: '86%'}} src={props.cover} /></div>}
-    <div style={{ width: '100%', height: '14%', display: 'inline-flex'}}>
+    <div style={{width: '100%', height: '14%', display: 'inline-flex'}}>
       {
           _.keys(props.links)
           .map((key, index, arr) => {
