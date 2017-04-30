@@ -11,7 +11,7 @@ export function Hub (props) {
   }
 
   return <span >
-    <a href={props.link}><img style={styles.img} src='/public/assets/octocat.png' /></a>
+    <a href={props.link}><img style={styles.img} target='_blank' src='/publichassets/octocat.png' /></a>
   </span>
 }
 
@@ -22,5 +22,6 @@ export function Med (props) {
     position: 'relative',
     top: '50%',
     color: 'red'}}
-    href={props.link}>med</a></div>
+    href={props.link}
+    target='_blank'>med</a></div>
 }
