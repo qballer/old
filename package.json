@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rm -rf dist && rm -rf ./public/*.bundle.js",
     "build": "babel ./src -d ./dist/src && node build && webpack",
-    "start": "chromium http://localhost:8000/index.html; node_modules/.bin/http-server . -p 8000"
+    "start": "chromium http://localhost:8000/index.html; node_modules/.bin/http-server . -p 8000",
+    "test": "standard --fix"
   },
   "repository": {
     "type": "git",
